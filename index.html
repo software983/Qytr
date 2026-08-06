@@ -20,7 +20,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;600;700&family=Plus+Jakarta+Sans:wght@400;600&display=swap" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap" rel="stylesheet"/>
     <style>
-        /* خط الأيقونات محمّل محليًا من فولدر fonts بجوار index.html، بدل تحميله من جوجل في كل مرة */
+        /* خط الأيقونات محمّل محليًا من فولدر fonts بجوار index13.html، بدل تحميله من جوجل في كل مرة */
         @font-face {
             font-family: 'Material Symbols Outlined';
             font-style: normal;
@@ -30,7 +30,7 @@
         }
     </style>
     <script>
-        // إظهار الأيقونات فقط بعد التأكد من تحميل خط الأيقونات فعليًا (يمنع ظهور نص مقصوص مكان الأيقونة)
+        // إظهار الأيقونات فقط بعد التأكد من تحميل خط الأيقونات فعليًا (يمنع ظهور نص مقصوص مثل "Fa" مكان الأيقونة)
         (function () {
             var reveal = function () { document.documentElement.classList.add('fonts-ready'); };
             if ('fonts' in document) {
@@ -96,6 +96,7 @@
             box-shadow: inset 0 1px 2px rgba(0,0,0,0.4);
         }
         
+
         /* ==== تحسينات شريط التقدم التفاعلي ==== */
         .custom-progress #progress-bar, .custom-mini-progress {
             transition: width 0.15s linear;
@@ -116,25 +117,6 @@
             font-family: 'Amiri', 'Noto Serif', serif;
             font-weight: 700;
             letter-spacing: 0;
-        }
-
-        /* ==== تأثيرات تظليل آيات المصحف ==== */
-        .ayah-highlight {
-            position: absolute;
-            background-color: rgba(16, 185, 129, 0.25); /* لون أخضر شفاف */
-            mix-blend-mode: multiply;
-            cursor: pointer;
-            transition: background-color 0.2s ease;
-        }
-        .dark .ayah-highlight {
-            background-color: rgba(52, 211, 153, 0.35);
-            mix-blend-mode: screen;
-        }
-        .ayah-highlight:hover {
-            background-color: rgba(16, 185, 129, 0.4);
-        }
-        .ayah-highlight.active-ayah {
-            background-color: rgba(254, 147, 44, 0.4); /* لون برتقالي للآية النشطة */
         }
     </style>
     <style id="riwaya-selector-style">
@@ -418,32 +400,6 @@
             </div>
         </main>
     </div>
-    
-    <!-- ==================== MUSHAF SCREEN ==================== -->
-    <div id="screen-mushaf" class="screen-hidden block min-h-screen pb-24">
-        <header class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-[#0f1115]/80 backdrop-blur-xl flex flex-col items-center justify-center px-6 h-16 max-w-[720px] mx-auto">
-            <h1 class="font-page-title text-2xl font-bold text-primary dark:text-emerald-400">المصحف</h1>
-            <p id="mushaf-header-info" class="text-xs text-on-surface-variant dark:text-slate-400">اختر قارئاً لبدء التلاوة</p>
-        </header>
-
-        <main class="pt-[80px] px-2 max-w-[720px] mx-auto flex flex-col items-center">
-            <!-- حاوية صفحة المصحف -->
-            <div id="mushaf-container" class="relative w-full max-w-[500px] bg-white rounded-lg shadow-md overflow-hidden" style="aspect-ratio: 0.65;">
-                <!-- صورة SVG للصفحة ستُعرض هنا -->
-                <img id="mushaf-page-img" src="" class="absolute inset-0 w-full h-full object-contain pointer-events-none opacity-0 transition-opacity duration-300" />
-                
-                <!-- طبقة التظليل (Highlights) وفوقها يتم النقر -->
-                <div id="mushaf-highlights-layer" class="absolute inset-0 w-full h-full z-10"></div>
-            </div>
-            
-            <!-- أزرار تقليب الصفحات يدوياً -->
-            <div class="flex justify-between items-center w-full max-w-[500px] mt-4 px-4">
-                <button onclick="changeMushafPage(-1)" class="p-2 rounded-full hover:bg-surface-container dark:hover:bg-slate-800 text-primary dark:text-emerald-400 transition-colors"><span class="material-symbols-outlined rtl:rotate-180">arrow_forward</span></button>
-                <span id="mushaf-page-number" class="text-sm font-bold text-on-surface dark:text-white mt-1">صفحة -</span>
-                <button onclick="changeMushafPage(1)" class="p-2 rounded-full hover:bg-surface-container dark:hover:bg-slate-800 text-primary dark:text-emerald-400 transition-colors"><span class="material-symbols-outlined rtl:rotate-180">arrow_back</span></button>
-            </div>
-        </main>
-    </div>
 
     <!-- ==================== MINI PLAYER ==================== -->
     <div id="mini-player" class="hidden fixed bottom-24 inset-x-4 max-w-[420px] mx-auto z-40 bg-surface-container-lowest/95 dark:bg-[#1a1d1d]/95 backdrop-blur-2xl shadow-[0_10px_35px_-6px_rgba(0,53,39,0.28)] dark:shadow-[0_10px_35px_-6px_rgba(0,0,0,0.55)] border border-outline-variant/40 dark:border-slate-700/60 rounded-2xl transition-colors duration-300">
@@ -464,24 +420,19 @@
 
     <!-- ==================== BOTTOM NAVIGATION ==================== -->
     <nav id="bottom-nav" class="fixed bottom-4 inset-x-4 max-w-[420px] mx-auto flex justify-around items-center gap-1 px-2 py-2 bg-surface-container-lowest/95 dark:bg-[#1a1d1d]/95 backdrop-blur-2xl shadow-[0_10px_35px_-6px_rgba(0,53,39,0.28)] dark:shadow-[0_10px_35px_-6px_rgba(0,0,0,0.55)] border border-outline-variant/40 dark:border-slate-700/60 rounded-[26px] z-50 transition-colors duration-300">
-        <button id="nav-btn-home" class="nav-home flex flex-col items-center justify-center gap-0.5 min-w-[50px] py-1.5 text-on-surface-variant dark:text-slate-400 hover:text-primary dark:hover:text-emerald-400 active:scale-90 transition-all duration-200">
+        <button id="nav-btn-home" class="nav-home flex flex-col items-center justify-center gap-0.5 min-w-[64px] py-1.5 text-on-surface-variant dark:text-slate-400 hover:text-primary dark:hover:text-emerald-400 active:scale-90 transition-all duration-200">
             <span class="material-symbols-outlined text-[22px] leading-none">record_voice_over</span>
             <span class="text-[10px] font-bold tracking-tight" data-i18n="nav_reciters">القراء</span>
         </button>
-        <button id="nav-btn-favorites" class="nav-favorites flex flex-col items-center justify-center gap-0.5 min-w-[50px] py-1.5 text-on-surface-variant dark:text-slate-400 hover:text-primary dark:hover:text-emerald-400 active:scale-90 transition-all duration-200">
+        <button id="nav-btn-favorites" class="nav-favorites flex flex-col items-center justify-center gap-0.5 min-w-[64px] py-1.5 text-on-surface-variant dark:text-slate-400 hover:text-primary dark:hover:text-emerald-400 active:scale-90 transition-all duration-200">
             <span class="material-symbols-outlined text-[22px] leading-none">bookmark</span>
             <span class="text-[10px] font-bold tracking-tight" data-i18n="nav_fav">المفضلة</span>
         </button>
-        <button id="nav-btn-player" class="nav-player flex flex-col items-center justify-center gap-0.5 min-w-[50px] py-1.5 text-on-surface-variant dark:text-slate-400 hover:text-primary dark:hover:text-emerald-400 active:scale-90 transition-all duration-200">
+        <button id="nav-btn-player" class="nav-player flex flex-col items-center justify-center gap-0.5 min-w-[64px] py-1.5 text-on-surface-variant dark:text-slate-400 hover:text-primary dark:hover:text-emerald-400 active:scale-90 transition-all duration-200">
             <span class="material-symbols-outlined text-[22px] leading-none">play_circle</span>
             <span class="text-[10px] font-bold tracking-tight" data-i18n="nav_player">المشغل</span>
         </button>
-        <!-- NEW MUSHAF BUTTON -->
-        <button id="nav-btn-mushaf" class="nav-mushaf flex flex-col items-center justify-center gap-0.5 min-w-[50px] py-1.5 text-on-surface-variant dark:text-slate-400 hover:text-primary dark:hover:text-emerald-400 active:scale-90 transition-all duration-200">
-            <span class="material-symbols-outlined text-[22px] leading-none">auto_stories</span>
-            <span class="text-[10px] font-bold tracking-tight">المصحف</span>
-        </button>
-        <button id="nav-btn-settings" class="nav-settings flex flex-col items-center justify-center gap-0.5 min-w-[50px] py-1.5 text-on-surface-variant dark:text-slate-400 hover:text-primary dark:hover:text-emerald-400 active:scale-90 transition-all duration-200">
+        <button id="nav-btn-settings" class="nav-settings flex flex-col items-center justify-center gap-0.5 min-w-[64px] py-1.5 text-on-surface-variant dark:text-slate-400 hover:text-primary dark:hover:text-emerald-400 active:scale-90 transition-all duration-200">
             <span class="material-symbols-outlined text-[22px] leading-none">settings</span>
             <span class="text-[10px] font-bold tracking-tight" data-i18n="nav_settings">الإعدادات</span>
         </button>
@@ -862,13 +813,17 @@
 
         const reciterDataCache = new Map();
 
-        // ملفات القراء موجودة داخل المجلد الجديد mushaf/readers_audio/
+        // ملفات القراء (مثل mishary.json) موجودة داخل فولدر "readers" وليست بجانب index.html مباشرة
+        // هذه الدالة تحوّل اسم الملف القادم من لوحة التحكم إلى المسار الصحيح داخل الفولدر
         function readerJsonPath(file) {
             if (!file) return file;
+            // لا نضيف الفولدر إذا كان المسار رابط كامل (http/https) أو يحتوي أصلاً على "/"
             if (/^https?:\/\//i.test(file) || file.includes('/')) return file;
-            return `mushaf/readers_audio/${file}`;
+            return `readers/${file}`;
         }
 
+        // صور القراء (مثل mishary.jpg) موجودة داخل فولدر "photos" وليست بجانب index.html مباشرة
+        // نفس منطق readerJsonPath: لو القيمة اسم ملف بس نضيف الفولدر، ولو رابط كامل نتركه كما هو
         function imagePath(file) {
             if (!file) return file;
             if (/^https?:\/\//i.test(file) || file.includes('/')) return file;
@@ -988,7 +943,7 @@
             const extraRiwayat = (reciterInfo && Array.isArray(reciterInfo.riwayat) && reciterInfo.riwayat.length > 0) ? reciterInfo.riwayat : null;
             const mainRiwayaNameAr = (reciterInfo && reciterInfo.desc_ar) ? reciterInfo.desc_ar : 'الرواية الأساسية';
             const mainRiwayaNameEn = (reciterInfo && reciterInfo.desc_en) ? reciterInfo.desc_en : 'Main Riwaya';
-            const riwayat = extraRiwayat ? [{ name_ar: mainRiwayaNameAr, name_en: mainRiwayaNameEn, json_file: jsonFile, mushaf_type: reciterInfo.mushaf_type, timing_folder: reciterInfo.timing_folder }, ...extraRiwayat] : null;
+            const riwayat = extraRiwayat ? [{ name_ar: mainRiwayaNameAr, name_en: mainRiwayaNameEn, json_file: jsonFile }, ...extraRiwayat] : null;
             let activeRiwayaIndex = riwayat ? 0 : null;
             let surahsFile = jsonFile;
 
@@ -1256,108 +1211,6 @@
         // ملف الـ JSON الخاص بالقارئ الذي يتم تشغيله فعلياً، نستخدمه لإعادة فتح صفحته من تبويب "المشغل"
         let activeReciterJsonFile = null;
 
-        // ==================== MUSHAF Logic ====================
-        let currentMushafData = {
-            type: null,
-            timingsFolder: null,
-            coordinates: null, // بيانات الإحداثيات للسورة الحالية
-            timings: null, // بيانات التوقيت للسورة الحالية
-            currentPage: null,
-            activeAyah: null
-        };
-
-        async function loadMushafData(mushafType, timingFolder, surahId) {
-            currentMushafData.type = mushafType;
-            currentMushafData.timingsFolder = timingFolder;
-
-            try {
-                // تحويل رقم السورة إلى 3 أرقام (مثال: 1 يصبح 001، 12 تصبح 012)
-                const paddedSurahId = String(surahId).padStart(3, '0');
-                
-                // المسارات الجديدة لتطابق أسماء ملفاتك (001.json)
-                const coordsPath = `mushaf/qiraat/${mushafType}/coordinates/${paddedSurahId}.json`;
-                const timingsPath = `mushaf/timings/${timingFolder}/${paddedSurahId}.json`;
-
-                const [coordsRes, timingsRes] = await Promise.all([
-                    fetch(coordsPath),
-                    fetch(timingsPath)
-                ]);
-
-                if (coordsRes.ok && timingsRes.ok) {
-                    currentMushafData.coordinates = await coordsRes.json();
-                    currentMushafData.timings = await timingsRes.json();
-
-                    // تحديد أول صفحة في السورة بناءً على الإحداثيات
-                    if (currentMushafData.coordinates.length > 0) {
-                        const firstPage = currentMushafData.coordinates[0].page;
-                        renderMushafPage(firstPage);
-                    }
-                } else {
-                    // لم يتم العثور على الملفات
-                    document.getElementById('mushaf-page-img').classList.add('opacity-0');
-                    document.getElementById('mushaf-highlights-layer').innerHTML = '';
-                    currentMushafData.coordinates = null;
-                    currentMushafData.timings = null;
-                    console.log("ملفات المصحف غير متوفرة للسورة:", surahId);
-                }
-            } catch (e) {
-                console.error("خطأ في جلب بيانات المصحف", e);
-            }
-        }
-
-        function renderMushafPage(pageNum) {
-            if (!pageNum) return;
-
-            currentMushafData.currentPage = pageNum;
-            document.getElementById('mushaf-page-number').textContent = `صفحة ${pageNum}`;
-
-            const imgEl = document.getElementById('mushaf-page-img');
-            
-            // تحويل رقم الصفحة إلى 3 أرقام (مثال: 1 يصبح 001)
-            const paddedPageNum = String(pageNum).padStart(3, '0');
-            
-            // مسار ملف الـ SVG الجديد ليطابق تسميتك (001.svg)
-            imgEl.src = `mushaf/qiraat/${currentMushafData.type}/pages/${paddedPageNum}.svg`;
-            imgEl.onload = () => imgEl.classList.remove('opacity-0');
-
-            const layer = document.getElementById('mushaf-highlights-layer');
-            layer.innerHTML = ''; // مسح التظليلات القديمة
-
-            // رسم صناديق الآيات الموجودة في هذه الصفحة فقط
-            if (currentMushafData.coordinates) {
-                const pageAyahs = currentMushafData.coordinates.filter(a => a.page === pageNum);
-                pageAyahs.forEach(ayah => {
-                    const box = document.createElement('div');
-                    box.className = `ayah-highlight ${currentMushafData.activeAyah === ayah.ayah_id ? 'active-ayah' : ''}`;
-                    box.id = `ayah-box-${ayah.ayah_id}`;
-                    // يفترض أن الإحداثيات تأتي كنسبة مئوية (%, %)
-                    box.style.left = `${ayah.x}%`;
-                    box.style.top = `${ayah.y}%`;
-                    box.style.width = `${ayah.w}%`;
-                    box.style.height = `${ayah.h}%`;
-                    
-                    // المزامنة العكسية: عند النقر على الآية، ينتقل المشغل لزمنها
-                    box.onclick = () => syncAudioToMushaf(ayah.ayah_id);
-                    layer.appendChild(box);
-                });
-            }
-        }
-
-        function changeMushafPage(dir) {
-            if (currentMushafData.currentPage) {
-                renderMushafPage(currentMushafData.currentPage + dir);
-            }
-        }
-
-        function syncAudioToMushaf(ayahId) {
-            if (!currentMushafData.timings) return;
-            const targetTiming = currentMushafData.timings.find(t => t.ayah_id === ayahId);
-            if (targetTiming) {
-                audio.currentTime = targetTiming.start_time;
-                if (audio.paused) togglePlay(); // تشغيل الصوت إذا كان متوقفاً
-            }
-        }
-
         // ==================== تكرار السورة الحالية / التشغيل التلقائي للتالية ====================
         let repeatCurrent = false;
         let autoPlayEnabled = true;
@@ -1517,35 +1370,6 @@
             // لو السورة محمّلة مسبقاً للاستماع بدون نت، نشغّلها من النسخة المحلية مباشرة
             const playbackUrl = await resolvePlaybackUrl(audioUrl);
             playAudio(playbackUrl, surahName, reciterName, imagePath(currentReciter.image), opts);
-
-            // ==================== تهيئة وتشغيل المصحف المتزامن ====================
-            let mushafType = null;
-            let timingFolder = null;
-
-            // التحقق مما إذا كان هناك روايات إضافية مختارة
-            if (currentReciter.riwayat && currentReciter.riwayat.length > 0) {
-                const riwaya = currentReciter.riwayat[currentReciter.activeRiwayaIndex || 0];
-                if (riwaya) {
-                    // نأخذ بيانات الرواية، وإذا كانت فارغة نأخذ بيانات القارئ الأساسية كبديل
-                    mushafType = riwaya.mushaf_type || currentReciter.mushaf_type;
-                    timingFolder = riwaya.timing_folder || currentReciter.timing_folder;
-                }
-            } else {
-                // إذا لم يكن هناك أي روايات إضافية، نعتمد على بيانات القارئ الأساسية مباشرة
-                mushafType = currentReciter.mushaf_type;
-                timingFolder = currentReciter.timing_folder;
-            }
-
-            if (mushafType && timingFolder) {
-                loadMushafData(mushafType, timingFolder, surah.id);
-                document.getElementById('mushaf-header-info').textContent = `${reciterName} - ${surahName}`;
-            } else {
-                // إفراغ الشاشة إن لم تتوفر توقيتات أو إحداثيات
-                currentMushafData.timings = null;
-                document.getElementById('mushaf-header-info').textContent = "لا تتوفر بيانات المصحف لهذا القارئ";
-                document.getElementById('mushaf-page-img').classList.add('opacity-0');
-                document.getElementById('mushaf-highlights-layer').innerHTML = '';
-            }
         }
 
         // ==================== استئناف آخر سورة تم الاستماع إليها ====================
@@ -1732,33 +1556,6 @@
                     updateHifzBadge();
                 }
             }
-            
-            // ==================== مزامنة المصحف مع تقدم التلاوة ====================
-            if (currentMushafData.timings && !audio.paused) {
-                const currentTime = audio.currentTime;
-                // البحث عن الآية الحالية في ملف التوقيتات
-                const currentAyahTiming = currentMushafData.timings.find(t => currentTime >= t.start_time && currentTime <= t.end_time);
-                
-                if (currentAyahTiming && currentAyahTiming.ayah_id !== currentMushafData.activeAyah) {
-                    currentMushafData.activeAyah = currentAyahTiming.ayah_id;
-                    
-                    // البحث عن بيانات الإحداثيات لهذه الآية لمعرفة رقم الصفحة
-                    const ayahCoords = currentMushafData.coordinates.find(c => c.ayah_id === currentMushafData.activeAyah);
-                    
-                    if (ayahCoords) {
-                        // إذا انتقل القارئ لصفحة جديدة، اقلب الصفحة تلقائياً
-                        if (ayahCoords.page !== currentMushafData.currentPage) {
-                            renderMushafPage(ayahCoords.page);
-                        } else {
-                            // تحديث التظليل فقط دون تقليب
-                            document.querySelectorAll('.ayah-highlight').forEach(el => el.classList.remove('active-ayah'));
-                            const activeBox = document.getElementById(`ayah-box-${currentMushafData.activeAyah}`);
-                            if (activeBox) activeBox.classList.add('active-ayah');
-                        }
-                    }
-                }
-            }
-            
             // حفظ دوري لموضع التشغيل (كل 5 ثوانٍ تقريباً) لاستئنافه لاحقاً
             if (audio.currentTime - lastSaveTime > 5) {
                 lastSaveTime = audio.currentTime;
@@ -1934,7 +1731,7 @@
         }
 
         function showScreen(screenId, push = true) {
-            ['screen-home', 'screen-profile', 'screen-player', 'screen-favorites', 'screen-settings', 'screen-mushaf'].forEach(id => {
+            ['screen-home', 'screen-profile', 'screen-player', 'screen-favorites', 'screen-settings'].forEach(id => {
                 document.getElementById(id).classList.add('screen-hidden');
                 if(id === 'screen-player') document.getElementById(id).classList.remove('flex');
             });
@@ -1969,11 +1766,9 @@
             else showScreen('screen-home', false);
         });
 
-        // ربط أزرار التنقل
         document.querySelectorAll('.nav-home').forEach(btn => btn.addEventListener('click', () => showScreen('screen-home')));
         document.querySelectorAll('.nav-favorites').forEach(btn => btn.addEventListener('click', () => showScreen('screen-favorites')));
         document.querySelectorAll('.nav-settings').forEach(btn => btn.addEventListener('click', () => showScreen('screen-settings')));
-        document.querySelectorAll('.nav-mushaf').forEach(btn => btn.addEventListener('click', () => showScreen('screen-mushaf')));
 
         // ==================== تبويب "المشغل" الديناميكي ====================
         // تبويب المشغل في الشريط السفلي لم يعد يفتح شاشة تشغيل ثابتة، بل يعرض دائماً
