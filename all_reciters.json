@@ -1,0 +1,141 @@
+[
+  {
+    "id": "Hosary",
+    "image": "hosary.jpg",
+    "name_ar": "محمود خليل الحصري",
+    "desc_ar": "حفص عن عاصم",
+    "type_ar": "مرتل • ١١٤ سورة",
+    "name_en": "Mahmoud Khalil Al-Husari",
+    "desc_en": "Hafs 'an 'Asim",
+    "type_en": "Murtal • 114 Suras",
+    "json_file": "husary1.json",
+    "riwayat": [
+      {
+        "name_ar": "ورش عن نافع",
+        "name_en": "Warsh 'an Nafi",
+        "json_file": "husary2.json"
+      },
+      {
+        "name_ar": "قالون عن نافع",
+        "name_en": "Qalun 'an Nafi",
+        "json_file": "husary3.json"
+      },
+      {
+        "name_ar": "الدوري عن أبي عمرو",
+        "name_en": "Al-Duri 'an Abi Amr",
+        "json_file": "husary4.json"
+      },
+      {
+        "name_ar": "المصحف المجود",
+        "name_en": "Mujawwad",
+        "json_file": "husary5.json"
+      }
+    ]
+  },
+  {
+    "id": "Al-Banna",
+    "image": "banna.jpg",
+    "name_ar": "محمود علي البنا ",
+    "desc_ar": "حفص عن عاصم",
+    "type_ar": "مرتل • ١١٤ سورة",
+    "name_en": "Mahmoud Ali Al-Banna",
+    "desc_en": "Hafs 'an 'Asim",
+    "type_en": "Murtal • 114 Suras",
+    "json_file": "banna1.json",
+    "riwayat": [
+      {
+        "name_ar": "المصحف المجود",
+        "name_en": "Tajweed",
+        "json_file": "banna2.json"
+      }
+    ]
+  },
+  {
+    "id": "Minshawy",
+    "image": "minshawy.jpg",
+    "name_ar": "محمد صديق المنشاوي",
+    "desc_ar": "حفص عن عاصم",
+    "type_ar": "مرتل • ١١٤ سورة",
+    "name_en": "Mohammed Siddiq Al-Minshawi",
+    "desc_en": "Hafs 'an 'Asim",
+    "type_en": "Murtal • 114 Suras",
+    "json_file": "minshawy1.json",
+    "riwayat": [
+      {
+        "name_ar": "المصحف المجود",
+        "name_en": "Mujawwad",
+        "json_file": "minshawy2.json"
+      },
+      {
+        "name_ar": "المصحف المعلم",
+        "name_en": "Mu'allim Quran",
+        "json_file": "minshawy3.json"
+      }
+    ]
+  },
+  {
+    "id": "abdul_basit",
+    "image": "basit.jpg",
+    "name_ar": "عبد الباسط عبد الصمد",
+    "desc_ar": "حفص عن عاصم",
+    "type_ar": "مرتل • ١١٤ سورة",
+    "name_en": "Abdul Basit",
+    "desc_en": "Hafs 'an 'Asim",
+    "type_en": "Murtal • 114 Suras",
+    "json_file": "basit1.json",
+    "riwayat": [
+      {
+        "name_ar": "ورش عن نافع",
+        "name_en": "Warsh 'an Nafi",
+        "json_file": "basit2.json"
+      },
+      {
+        "name_ar": "المصحف المجود",
+        "name_en": "Mujawwad",
+        "json_file": "basit3.json"
+      }
+    ]
+  },
+  {
+    "id": "Ismael",
+    "image": "mustafa.jpg",
+    "name_ar": "مصطفي اسماعيل",
+    "desc_ar": "حفص عن عاصم",
+    "type_ar": "مرتل • ١١٤ سورة",
+    "name_en": "Mustafa Ismail",
+    "desc_en": "Hafs 'an 'Asim",
+    "type_en": "Murtal • 114 Suras",
+    "json_file": "m_ismael1.json",
+    "riwayat": [
+      {
+        "name_ar": "المصحف المجود",
+        "name_en": "Mujawwad",
+        "json_file": "m_ismael2.json"
+      }
+    ]
+  },
+  {
+    "id": "Ahmed amer",
+    "image": "aamer.jpg",
+    "name_ar": "أحمد عامر",
+    "desc_ar": "حفص عن عاصم",
+    "type_ar": "مرتل • ١١٤ سورة",
+    "name_en": "Ahmed Amer",
+    "desc_en": "Hafs 'an 'Asim",
+    "type_en": "Murtal • 114 Suras",
+    "json_file": "aamer.json",
+    "mushaf_type": "hafs",
+    "timing_folder": "Ahmed amer/hafs_time"
+  },
+  {
+    "id": "Maasrawi",
+    "image": "maasrawi.jpg",
+    "name_ar": "أحمد عيسى المعصراوي",
+    "desc_ar": "حفص عن عاصم",
+    "type_ar": "مرتل • ١١٤ سورة",
+    "name_en": " Ahmed Issa Al-Masrawi",
+    "desc_en": "Hafs 'an 'Asim",
+    "type_en": "Murtal • 114 Suras",
+    "json_file": "Maasrawi.json"
+  }
+]
