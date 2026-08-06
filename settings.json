@@ -1,0 +1,33 @@
+{
+  "featured": [
+    {
+      "img": "maasrawi_top.jpg",
+      "name_ar": "أحمد عيسى المعصراوي",
+      "name_en": "Ahmed Issa Al-Masrawi",
+      "desc_ar": "شيخ عموم المقارئ المصرية",
+      "desc_en": "Sheikh of all Egyptian Quran reciters ",
+      "json_file": "maasrawi.json"
+    },
+    {
+      "img": "mustafa.jpg",
+      "name_ar": "الشيخ مصطفى اسماعيل",
+      "name_en": "Sheikh Mustafa Ismail",
+      "desc_ar": "سلطان القراء",
+      "desc_en": "Sultan of Reciters",
+      "json_file": ""
+    },
+    {
+      "img": "minshawy_top.jpg",
+      "name_ar": "محمد صديق المنشاوي",
+      "name_en": "Mohammed Siddiq Al-Minshawi",
+      "desc_ar": "القارئ الخاشع",
+      "desc_en": "The Humbled Reader",
+      "json_file": ""
+    }
+  ],
+  "name_ar": "تــــلاوات",
+  "name_en": "Telawat",
+  "icon_url": "https://via.placeholder.com/150",
+  "featured_title_ar": "أبرز القراء",
+  "featured_title_en": "Top Readers"
+}
